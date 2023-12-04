@@ -1,5 +1,5 @@
 {
-  "name": "allurereport_mocha",
+  "name": "allurereport_cucumber",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
