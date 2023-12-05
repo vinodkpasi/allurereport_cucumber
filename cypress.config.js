@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 const execSync = require('child_process').execSync;
+const fs = require('fs')
 
 module.exports = defineConfig({
   e2e: {
@@ -8,8 +9,8 @@ module.exports = defineConfig({
       on("file:preprocessor", require('cypress-cucumber-preprocessor').default());
       allureWriter(on, config);
       on('before:run', (details) => {
-        execSync("if exist allure-report rmdir allure-report /s /q");
-        execSync("if exist allure-results rmdir allure-results /s /q");
+        fs.rmSync("allure-report", { recursive: true, force: true });
+        fs.rmSync("allure-results", { recursive: true, force: true });
       })
       on('after:run', (details) => {
         execSync('npx allure generate allure-results --single-file --clean -o allure-report && npx allure open allure-report');
