@@ -12,7 +12,6 @@
   "dependencies": {
     "@shelex/cypress-allure-plugin": "2.40.1",
     "allure-commandline": "2.24.1",
-    "allure-single-html-file-js": "0.0.6",
     "cypress": "12.14.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
