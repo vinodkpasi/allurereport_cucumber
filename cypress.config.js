@@ -12,7 +12,7 @@ module.exports = defineConfig({
         execSync("if exist allure-results rmdir allure-results /s /q");
       })
       on('after:run', (details) => {
-        execSync('npx allure generate allure-results --clean -o allure-report && node ./node_modules/allure-single-html-file-js/combine.js allure-report && npx allure open allure-report');
+        execSync('npx allure generate allure-results --single-file --clean -o allure-report && npx allure open allure-report');
       })
       return config;
     },
