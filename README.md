@@ -13,9 +13,7 @@ Run the below command to run the tests in the run-mode.
 
 **npx cypress run**
 
-After test execution is completed using **run** mode then report is generated in the root directory of the project inside **"allure-reports"** folder and report is automatically open in the default browser.
-
-This folder also contains the **"complete.html"** file which is single file version of allure report and does not have any dependency on web server to be displayed and easily can be shared to anyone.
+Using **run** mode when test execution is completed then single file version report file **"index.html"** is generated in the root directory of the project inside **"allure-reports"** folder and report is automatically open in the default browser.
 
 Run the below command to open the report manually.
 **npm run allure:open:report**
