@@ -10,11 +10,10 @@ function setReportTitle() {
 function setReportName() {
     const searchText='Allure Report';
     const reportName= "{{allureReportName}}"||"Test Report";
-    const refreshId = setInterval(function () {
+    setInterval(function () {
         var header = document.getElementsByTagName("h2")[0];
         if (header.innerHTML.includes(searchText)) {
             header.innerHTML = header.innerHTML.replace(searchText, reportName);
-            clearInterval(refreshId);
         }
     }, 1, reportName);
 }
