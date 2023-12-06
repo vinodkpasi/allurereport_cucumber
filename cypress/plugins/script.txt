@@ -1,0 +1,23 @@
+
+<script>
+//SET REPORT TITLE
+function setReportTitle() {
+    const title = "{{allureReportTitle}}"||"Test Report";
+    document.title = title;
+}
+
+//SET REPORT NAME
+function setReportName() {
+    const searchText='Allure Report';
+    const reportName= "{{allureReportName}}"||"Test Report";
+    const refreshId = setInterval(function () {
+        var header = document.getElementsByTagName("h2")[0];
+        if (header.innerHTML.includes(searchText)) {
+            header.innerHTML = header.innerHTML.replace(searchText, reportName);
+            clearInterval(refreshId);
+        }
+    }, 1, reportName);
+}
+setReportTitle();
+setReportName();
+</script>
